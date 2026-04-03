@@ -1,6 +1,6 @@
 # postkit-excerpt
 
-**Purpose:** Generates short summaries from post content.
+**Purpose:** Generates short summaries from post content. Used to create excerpts for post cards, previews, and search results.
 
 ---
 
@@ -26,19 +26,32 @@
 ## Example Usage
 
 ```ts
-code
+import { createExcerpt, truncateByWords, normalizeWhitespace } from 'postkit-excerpt'
+
+createExcerpt('This is a long post body that keeps going.', 30)
+// → "This is a long post body that…"
+
+truncateByWords('The quick brown fox jumped over the lazy dog', 5)
+// → "The quick brown fox jumped…"
+
+normalizeWhitespace('  Hello   world\n\nfoo  ')
+// → "Hello world foo"
 ```
 
 ---
 
 ## Edge Cases
 
-- ...
-- ...
-- ...
+- Empty string → `""`
+- `maxLength` or `maxWords` of `0` → `""`
+- Text already within limit → returned as-is, no `"…"` appended
+- Whitespace-only input → `""`
+- `maxLength` smaller than the first word → returns that word + `"…"`
 
 ---
 
 ## Design Notes
 
-- explain key decisions
+- `createExcerpt` calls `normalizeWhitespace` internally so callers don't need to clean input first.
+- `createExcerpt` and `truncateByWords` are separate because they solve different layout problems — character limits for fixed-width containers, word limits for more natural reading flow.
+- Truncation always breaks at word boundaries. Cutting mid-word looks like a bug.
