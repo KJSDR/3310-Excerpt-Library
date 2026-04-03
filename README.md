@@ -38,7 +38,6 @@ normalizeWhitespace('  Hello   world\n\nfoo  ')
 // → "Hello world foo"
 ```
 
----
 
 ## Edge Cases
 
