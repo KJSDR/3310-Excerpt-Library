@@ -1,6 +1,6 @@
 # postkit-excerpt
 
-**Purpose:** Generates short summaries from post content. Used to create excerpts for post cards, previews, and search results.
+**Purpose:** Generates short summaries from post content.
 
 ---
 
