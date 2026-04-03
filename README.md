@@ -45,7 +45,7 @@ normalizeWhitespace('  Hello   world\n\nfoo  ')
 - `maxLength` or `maxWords` of `0` → `""`
 - Text already within limit → returned as-is, no `"…"` appended
 - Whitespace-only input → `""`
-- `maxLength` smaller than the first word → returns that word + `"…"`
+- `maxLength` smaller than the first word → returns that word + `"…"` 🤔 If the word is longer than max length adding the ellipes will only make the word longer! That means that this could return something longer than max length. Which might be okay since we wouldn;t be truncating a word, if this is case you should make that clear in your docs! 
 
 ---
 
