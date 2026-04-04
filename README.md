@@ -45,8 +45,7 @@ normalizeWhitespace('  Hello   world\n\nfoo  ')
 - `maxLength` or `maxWords` of `0` → `""`
 - Text already within limit → returned as-is, no `"…"` appended
 - Whitespace-only input → `""`
-- `maxLength` smaller than the first word → returns that word + `"…"`
-
+- `maxLength` smaller than the first word → returns that word + "…" even though the result exceeds `maxLength`. Since truncation never cuts mid-word, this is the shortest possible output. The returned string may be longer than `maxLength` in this case.
 ---
 
 ## Design Notes
