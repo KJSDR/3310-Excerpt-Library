@@ -1,0 +1,25 @@
+{
+  "name": "3310-excerpt-library",
+  "version": "1.0.0",
+  "description": "**Purpose:** Generates short summaries from post content. Used to create excerpts for post cards, previews, and search results.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KJSDR/3310-Excerpt-Library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KJSDR/3310-Excerpt-Library/issues"
+  },
+  "homepage": "https://github.com/KJSDR/3310-Excerpt-Library#readme",
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.3"
+  }
+}
