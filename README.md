@@ -53,3 +53,4 @@ normalizeWhitespace('  Hello   world\n\nfoo  ')
 - `createExcerpt` calls `normalizeWhitespace` internally so callers don't need to clean input first.
 - `createExcerpt` and `truncateByWords` are separate because they solve different layout problems — character limits for fixed-width containers, word limits for more natural reading flow.
 - Truncation always breaks at word boundaries. Cutting mid-word looks like a bug.
+- - During implementation, a bug was found and fixed where `createExcerpt` would incorrectly slice a word shorter than `maxLength` before checking for spaces. Tests caught this.
