@@ -1,10 +1,14 @@
 {
-  "name": "3310-excerpt-library",
+  "name": "postkit-excerpt",
   "version": "1.0.0",
   "description": "**Purpose:** Generates short summaries from post content. Used to create excerpts for post cards, previews, and search results.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "test": "vitest"
+    "build": "tsc",
+    "test": "vitest",
+    "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,7 +17,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/KJSDR/3310-Excerpt-Library/issues"
   },
